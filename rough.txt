@@ -22,3 +22,10 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
+
+
+    set: $env:MONGODB_URL = "mongodb+srv://mridul16011996:GKbkitx4ctPRZ9FY@cluster0.i8al06k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    check: echo $env:MONGODB_URL
+
+
+    powershell command to activate venv - .\vehicle\Scripts\Activate.ps1
