@@ -4,7 +4,8 @@ from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import HTMLResponse, RedirectResponse
-from uvicorn import run as app_run
+import uvicorn
+#from uvicorn import run as app_run
 
 from typing import Optional
 
@@ -142,5 +143,5 @@ async def predictRouteClient(request: Request):
 
 # Main entry point to start the FastAPI server
 if __name__ == "__main__":
-    app_run(app, host="13.221.246.99", port=APP_PORT)
+    uvicorn.run(app, host="0.0.0.0", port=5000)
     #app_run(app, host="192.168.5.11", port=APP_PORT)
