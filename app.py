@@ -82,6 +82,14 @@ async def index(request: Request):
     return templates.TemplateResponse(
             "vehicledata.html",{"request": request, "context": "Rendering"})
 
+
+@app.get("/mridul")
+async def test(request: Request):
+    """
+    Renders the main HTML form page for vehicle data input.
+    """
+    return 
+
 # Route to trigger the model training process
 @app.get("/train")
 async def trainRouteClient():
@@ -140,3 +148,14 @@ async def predictRouteClient(request: Request):
         
     except Exception as e:
         return {"status": False, "error": f"{e}"}
+
+
+from fastapi import Body
+
+@app.get("/hello")
+async def hello_get():
+    return {"message": "Hello Mridul"}
+
+@app.post("/hello")
+async def hello_post(name: str = Body(..., embed=True)):
+    return {"message": f"Hello {name}"}
